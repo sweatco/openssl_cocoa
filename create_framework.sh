@@ -14,7 +14,7 @@ if [ ! -d lib ]; then
 fi
 
 FWTYPE=$1
-FWNAME=openssl
+FWNAME=openssl_cocoa
 FWROOT=frameworks
 
 if [ -d $FWROOT ]; then
@@ -204,7 +204,7 @@ if [ $FWTYPE == "dynamic" ]; then
             echo "Creating framework for $SYS"
             mkdir -p $FWDIR/Headers
             lipo -create ${DYLIBS[@]} -output $FWDIR/$FWNAME
-            cp -r include/$FWNAME/* $FWDIR/Headers/
+            cp -r include/openssl/* $FWDIR/Headers/
             cp -L assets/$SYS/Info.plist $FWDIR/Info.plist
             MIN_SDK_VERSION=$(get_min_sdk "$FWDIR/$FWNAME")
             OPENSSL_VERSION=$(get_openssl_version_from_file "$FWDIR/Headers/opensslv.h")
@@ -234,7 +234,7 @@ else
             libtool -static -o $FWDIR/$FWNAME $FWDIR/lib/*.a
             rm -rf $FWDIR/lib
             mkdir -p $FWDIR/Headers
-            cp -r include/$FWNAME/* $FWDIR/Headers/
+            cp -r include/openssl/* $FWDIR/Headers/
             cp -L assets/$SYS/Info.plist $FWDIR/Info.plist
             MIN_SDK_VERSION=$(get_min_sdk "$FWDIR/$FWNAME")
             OPENSSL_VERSION=$(get_openssl_version_from_file "$FWDIR/Headers/opensslv.h")

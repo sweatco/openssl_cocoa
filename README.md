@@ -7,7 +7,8 @@
 
 # How-to use it
 * Objective-C:
-    * add `#import <openssl/example.h>` to file that would use the library
+    * add `#import <openssl_cocoa/example.h>` to file that would use the library
 * Swift:
-    * add `#import <openssl/example.h>` to project bridging header
+    * if bridging header is not exist - create it by simply creating any `.h` file in project 
+    * add `#import <openssl_cocoa/example.h>` to project bridging header
     * after that you can use it in any Swift file
