@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "openssl_cocoa"
-    s.version      = "1.1.1o.3"
+    s.version      = "1.1.1o.4"
     s.summary      = "OpenSSL"
     s.homepage     = "https://github.com/sweatco/openssl_cocoa"
     s.license      = "Apache"
