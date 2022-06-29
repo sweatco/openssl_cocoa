@@ -118,6 +118,8 @@ function get_openssl_version_from_file() {
     echo $(get_openssl_version $std_version)
 }
 
+find include/openssl -type f -name "*.h" -print0 | xargs -0 sed -i '' 's/include <openssl\//include <'$FWNAME'\//g'
+
 if [ $FWTYPE == "dynamic" ]; then
     DEVELOPER=$(xcode-select -print-path)
     FW_EXEC_NAME="${FWNAME}.framework/${FWNAME}"

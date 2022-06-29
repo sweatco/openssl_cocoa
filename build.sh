@@ -25,7 +25,7 @@ set -u
 # SCRIPT DEFAULTS
 
 # Default version in case no version is specified
-DEFAULTVERSION="1.1.1o"
+DEFAULTVERSION="1.1.1p"
 
 # Default (=full) set of targets (OpenSSL >= 1.1.1) to build
 DEFAULTTARGETS=`cat <<TARGETS
@@ -37,10 +37,10 @@ tvos-sim-cross-x86_64 tvos64-cross-arm64
 TARGETS`
 
 # Minimum iOS/tvOS SDK version to build for
-IOS_MIN_SDK_VERSION="12.0"
+IOS_MIN_SDK_VERSION="12.1"
 MACOS_MIN_SDK_VERSION="10.14"
 CATALYST_MIN_SDK_VERSION="10.14"
-WATCHOS_MIN_SDK_VERSION="4.0"
+WATCHOS_MIN_SDK_VERSION="6.0"
 TVOS_MIN_SDK_VERSION="12.0"
 
 # Init optional env variables (use available variable or default to empty string)
@@ -599,10 +599,10 @@ if [ ${#OPENSSLCONF_ALL[@]} -gt 1 ]; then
       *_catalyst_arm64.h)
         DEFINE_CONDITION="(TARGET_OS_MACCATALYST || (TARGET_OS_IOS && TARGET_OS_SIMULATOR)) && TARGET_CPU_ARM64"
       ;;
-      *_watchos_armv7k.h)
+      *_watchos_arm64_32.h)
         DEFINE_CONDITION="TARGET_OS_WATCH && TARGET_OS_EMBEDDED && TARGET_CPU_ARM"
       ;;
-      *_watchos_arm64_32.h)
+      *_watchos_arm64.h)
         DEFINE_CONDITION="TARGET_OS_WATCH && TARGET_OS_EMBEDDED && TARGET_CPU_ARM64"
       ;;
       *_watchos_sim_x86_64.h)
