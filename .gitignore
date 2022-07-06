@@ -1,3 +1,8 @@
-/.DS_STORE
-scripts/.DS_Store
+**/.DS_STORE
 /build
+/bin
+/src
+/frameworks/*
+!/frameworks/*.xcframework.zip
+/include
+openssl-*.tar.gz*

@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = "12.1"
     s.watchos.deployment_target = "6.0"
     s.source       = { :git => "https://github.com/sweatco/openssl_cocoa", :tag => "#{s.version}" }
-    s.vendored_frameworks = "frameworks/openssl_cocoa.xcframework"
+    s.vendored_frameworks = "frameworks/openssl_cocoa.xcframework.zip"
     s.pod_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'YES' }
 end
